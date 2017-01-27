@@ -4,14 +4,16 @@
   "dependencies": {
     "body-parser": "^1.16.0",
     "bower": "*",
-    "browserify": "^14.0.0",
     "express": "^4.14.0",
     "method-override": "~2.0.2"
   },
   "devDependencies": {
-    "mongoose": "^4.4.12"
+    "mongoose": "^4.4.12",
+    "webpack": "^1.14.0"
   },
   "scripts": {
+    "bundle": "webpack",
     "postinstall": "bower install -F"
+
   }
 }
