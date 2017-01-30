@@ -1,27 +1,23 @@
-Folder Structure Used
+features Included 
 
-app/
------ shared/   // acts as reusable components or partials of our site
----------- sidebar/
---------------- sidebarDirective.js
---------------- sidebarView.html
----------- article/
---------------- articleDirective.js
---------------- articleView.html
------ components/ contain the actual sections for the Angular app.(static views ,directives and services for that specific section of the site)
----------- home/
---------------- homeController.js
---------------- homeService.js
---------------- homeView.html
----------- blog/
---------------- blogController.js
---------------- blogService.js
---------------- blogView.html
------ app.module.js
------ app.routes.js
-assets/
------ img/      // Images and icons for your app
------ css/      // All styles and style related files (SCSS or LESS files)
------ js/       // JavaScript files written for your app that are not for angular
------ libs/     // Third-party libraries such as jQuery, Moment, Underscore, etc.
-index.html //The index.html file will primarily handle loading in all the libraries and Angular elements.
+bower
+webpack
+express
+bootstrap
+mongodb and mongoose 
+api calls to create and add data using defined db models and schemas 
+api calls to access the database and fetch data 
+
+=============================================================================================================
+
+once downloaded, do a npm install - this will download all the node dependencies as well bower components 
+
+do a "npm run start" to bundle webpack and run the project 
+
+website will be on localhost:8080 
+
+
+
+
+
+
