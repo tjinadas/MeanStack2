@@ -1,5 +1,7 @@
-angular.module('MainCtrl', []).controller('MainController', function($scope) {
+'use strict';
 
-    $scope.tagline = 'To the moon and back!';   
+function MainController($scope){
+    $scope.tagline = 'To the moon and back!';
+}
 
-});
+module.exports = MainController;

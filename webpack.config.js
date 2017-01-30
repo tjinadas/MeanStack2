@@ -1,13 +1,13 @@
 var webpack = require('webpack');
 
 module.exports = {
-	context: __dirname + '/app',
+	context: __dirname + '/public',
 	entry: {
-	app: './app.js',
+	app: './js/app.js',
 	vendor: ['angular']
 	},
 	output: {
-	path: __dirname + 'public/js',
+	path: __dirname + '/public/js',
 	filename: 'app.bundle.js'
 	},
 	plugins: [
