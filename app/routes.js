@@ -1,5 +1,6 @@
-var Customers = require('./models/customermodel');
-var path = require('path');
+var Customers      = require('./models/customermodel');
+var path           = require('path');
+var express        = require('express');
 
 module.exports = function(app) {
 
@@ -7,19 +8,49 @@ module.exports = function(app) {
         // handle things like api calls
         // authentication routes
 
-        app.get('/api/customers', function(req, res) {
+        var router = express.Router(); 
 
-        	// use mongoose to get all customers in the database
+        router.use(function(req, res, next) {
+            // do logging
+            console.log('Something is happening.');
+            next(); // make sure we go to the next routes and don't stop here
+        });   
+
+        router.route('/customers')
+
+        .post(function(req, res) {
+        
+            console.log('adding a new customer');
+            // use mongoose to add a new customer
+            var customer = new Customers();
+            customer.firstName = "TJ";
+            customer.lastName = "Test";
+            customer.save(function (err, customer) {
+                if (err)
+                    res.send(err);
+                
+                res.json(customer); // return all customers in JSON format
+            })
+        
+        })
+
+        .get(function(req, res) {
+
+            console.log('fetching customer data');
+            // use mongoose to get all customers in the database
             Customers.find(function(err, customers) {
 
-                // if there is an error retrieving, send the error. 
-                                // nothing after res.send(err) will execute
                 if (err)
                     res.send(err);
 
-                res.json(customers); // return all customers in JSON format
+                res.json(customers); 
             });
+
+               
         });
+
+        app.use('/api', router);
+
 
         // route to handle creating goes here (app.post)
         // route to handle delete goes here (app.delete)

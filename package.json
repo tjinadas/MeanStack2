@@ -13,6 +13,7 @@
     "webpack": "^1.14.0"
   },
   "scripts": {
+    "start" : "webpack & node server",
     "bundle": "webpack",
     "postinstall": "bower install -F"
   }
