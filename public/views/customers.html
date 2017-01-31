@@ -5,9 +5,11 @@
 
     <div class="input-group">
 	  <span class="input-group-addon" id="basic-addon1"></span>
-	  <input type="text" class="form-control" placeholder="First Name" aria-describedby="basic-addon1">
-	  <input type="text" class="form-control" placeholder="Last Name" aria-describedby="basic-addon1">
+	  <input type="text" class="form-control" placeholder="First Name" aria-describedby="basic-addon1" ng-model="customer.firstName">
+	  <input type="text" class="form-control" placeholder="Last Name" aria-describedby="basic-addon1" ng-model="customer.lastName">
 	</div>
+
+	<button ng-click="saveCustomer()" type="button" class="btn btn-default">Save</button>
 
     <p>{{ tagline }}</p>
 </div>

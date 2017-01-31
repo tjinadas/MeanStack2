@@ -21,10 +21,12 @@ module.exports = function(app) {
         .post(function(req, res) {
         
             console.log('adding a new customer');
+            console.log(req.body);
+
             // use mongoose to add a new customer
             var customer = new Customers();
-            customer.firstName = "TJ";
-            customer.lastName = "Test";
+            customer.firstName = req.body.firstName
+            customer.lastName = req.body.firstName
             customer.save(function (err, customer) {
                 if (err)
                     res.send(err);
