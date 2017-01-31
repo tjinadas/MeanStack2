@@ -26,7 +26,7 @@ module.exports = function(app) {
             // use mongoose to add a new customer
             var customer = new Customers();
             customer.firstName = req.body.firstName
-            customer.lastName = req.body.firstName
+            customer.lastName = req.body.lastName
             customer.save(function (err, customer) {
                 if (err)
                     res.send(err);

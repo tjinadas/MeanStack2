@@ -1,7 +1,12 @@
 <!-- public/views/home.html -->
 
 <div class="jumbotron text-center">
-    <h1>Home Page 4 Life</h1>
+    <h1>Our Clients</h1>
+
+    <div ng-repeat="customer in customerset">
+		<span class="label label-default">{{customer.firstName}} {{customer.lastName}}  </span>
+    </div>
+    	
 
     <p>{{ tagline }}</p>
 </div>
